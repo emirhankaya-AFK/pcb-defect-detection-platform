@@ -23,7 +23,8 @@ def run_benchmark():
     manifest_path = dataset_dir / "ground_truth.json"
 
     # Ensure dataset is generated
-    if not manifest_path.exists():
+    sample_1 = dataset_dir / "images" / "pcb_sample_001.png"
+    if not manifest_path.exists() or not sample_1.exists():
         generate_benchmark_dataset(output_dir=dataset_dir, num_samples=18, seed=42)
 
     manifest_data = json.loads(manifest_path.read_text(encoding="utf-8"))
