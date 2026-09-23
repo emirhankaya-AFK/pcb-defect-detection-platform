@@ -1,4 +1,4 @@
-"""Evaluation metrics and spatial geometry utilities: IoU, NMS, and mAP@0.5 calculation."""
+"""Evaluation metrics and spatial geometry utilities: IoU, NMS, and Precision/Recall/F1 calculation."""
 from __future__ import annotations
 
 from typing import List, Tuple

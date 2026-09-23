@@ -46,7 +46,7 @@ with st.sidebar:
         )
 
     st.markdown("---")
-    st.caption("Industrial Visual Inspection AI v1.0.0 · IPC-A-610 Standard Compliant")
+    st.caption("Synthetic PCB AOI Prototype v1.0.1 · Simulated IPC-A-610 Defect Categories")
 
 
 # ---------------------------------------------------------------------------
@@ -169,7 +169,7 @@ with tabs[0]:
               <div class="kpi-card {card_status}">
                 <div class="kpi-label">Inspection Verdict</div>
                 <div class="kpi-val">{res.pass_fail_status}</div>
-                <div class="kpi-sub">IPC-A-610 Class 3</div>
+                <div class="kpi-sub">Simulated AOI Rule Check</div>
               </div>
               <div class="kpi-card info">
                 <div class="kpi-label">Defects Found</div>
@@ -283,7 +283,7 @@ with tabs[1]:
 # TAB 3: Model Evaluation Benchmark
 # ===========================================================================
 with tabs[2]:
-    st.markdown("### 📈 Quantitative Accuracy & mAP Benchmark")
+    st.markdown("### 📈 Quantitative Accuracy & Defect Evaluation Benchmark")
     st.markdown("Evaluate detector performance against normalized ground truth on standard benchmark test sets.")
 
     eval_btn = st.button("▶ Run Full Benchmark Evaluation Suite", type="primary")
@@ -304,8 +304,8 @@ with tabs[2]:
 # TAB 4: IPC-A-610 Defect Guide
 # ===========================================================================
 with tabs[3]:
-    st.markdown("### 📚 IPC-A-610 Standard PCB Defect Taxonomy")
-    st.markdown("Standard visual criteria for inspection of printed circuit boards and electronic assemblies.")
+    st.markdown("### 📚 Simulated IPC-A-610 PCB Defect Taxonomy")
+    st.markdown("Visual reference criteria for simulated inspection of printed circuit boards.")
 
     guide_items = [
         ("0. Missing Hole", "#EF4444", "CRITICAL", "Drill cycle failure where a designated via or mounting hole was not drilled through the copper annular ring, causing open nets between multi-layer inner planes."),

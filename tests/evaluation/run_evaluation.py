@@ -1,5 +1,5 @@
 """Benchmark evaluation script for PCB Defect Detection & Quality Control Platform.
-Measures Mean IoU, Precision, Recall, F1 per class, mAP@0.5, and inference latency (FPS).
+Measures Precision, Recall, F1 per class, Matched True-Positive Mean IoU, and inference latency (FPS).
 """
 from __future__ import annotations
 
@@ -40,7 +40,7 @@ def run_benchmark():
     total_samples = len(samples)
 
     print("\n" + "=" * 78)
-    print("  INDUSTRIAL VISUAL INSPECTION AI — BENCHMARK ACCURACY & mAP REPORT")
+    print("  SYNTHETIC PCB AOI PROTOTYPE — BENCHMARK ACCURACY & EVALUATION REPORT")
     print("=" * 78)
 
     for s in samples:
@@ -104,10 +104,10 @@ def run_benchmark():
     print("\n" + "=" * 78)
     print("  OPERATIONAL & SPEED PERFORMANCE METRICS")
     print("=" * 78)
-    print(f"  • Pass / Fail QC Accuracy   : {passed_correct}/{total_samples} ({qc_accuracy:.1f}%)")
-    print(f"  • Mean Bounding Box IoU    : {mean_iou:.4f}")
-    print(f"  • Average Inference Latency: {avg_lat:.2f} ms")
-    print(f"  • Throughput Capacity       : {fps:.1f} FPS (~{int(fps * 60)} boards/min)")
+    print(f"  • Pass / Fail QC Accuracy          : {passed_correct}/{total_samples} ({qc_accuracy:.1f}%)")
+    print(f"  • Matched True-Positive Mean IoU  : {mean_iou:.4f}")
+    print(f"  • Average Inference Latency       : {avg_lat:.2f} ms")
+    print(f"  • Throughput Capacity              : {fps:.1f} FPS (~{int(fps * 60)} boards/min)")
     print("=" * 78 + "\n")
 
     return {

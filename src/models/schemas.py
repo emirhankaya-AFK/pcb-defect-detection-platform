@@ -151,8 +151,7 @@ class BenchmarkReport(BaseModel):
     total_images: int
     total_ground_truth_defects: int
     total_predicted_defects: int
-    mean_iou: float
-    map_50: float
+    matched_tp_mean_iou: float = Field(description="Matched True-Positive Mean IoU")
     overall_precision: float
     overall_recall: float
     overall_f1: float

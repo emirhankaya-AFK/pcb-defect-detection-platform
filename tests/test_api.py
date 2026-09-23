@@ -93,3 +93,44 @@ class TestInspectionEndpoints:
         assert data["total_inspected"] == 2
         assert "yield_rate_percent" in data
         assert len(data["items"]) == 2
+
+    def test_unsupported_mime_type_rejected(self):
+        fake_pdf = b"%PDF-1.4 test data"
+        # Test /inspect
+        resp1 = client.post(
+            "/api/v1/inspect",
+            files={"file": ("report.pdf", io.BytesIO(fake_pdf), "application/pdf")},
+        )
+        assert resp1.status_code == 415
+        assert "Unsupported media type" in resp1.json()["detail"]
+
+        # Test /inspect/annotated
+        resp2 = client.post(
+            "/api/v1/inspect/annotated",
+            files={"file": ("report.pdf", io.BytesIO(fake_pdf), "application/pdf")},
+        )
+        assert resp2.status_code == 415
+
+        # Test /inspect/batch
+        resp3 = client.post(
+            "/api/v1/inspect/batch",
+            files=[("files", ("report.pdf", io.BytesIO(fake_pdf), "application/pdf"))],
+        )
+        assert resp3.status_code == 415
+
+    def test_oversized_payload_rejected(self):
+        # Create dummy buffer exceeding 15 MB
+        large_bytes = b"0" * (16 * 1024 * 1024)
+
+        resp1 = client.post(
+            "/api/v1/inspect",
+            files={"file": ("large.png", io.BytesIO(large_bytes), "image/png")},
+        )
+        assert resp1.status_code == 413
+        assert "exceeds" in resp1.json()["detail"]
+
+        resp2 = client.post(
+            "/api/v1/inspect/annotated",
+            files={"file": ("large.png", io.BytesIO(large_bytes), "image/png")},
+        )
+        assert resp2.status_code == 413

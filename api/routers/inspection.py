@@ -15,6 +15,7 @@ router = APIRouter()
 
 ALLOWED_MIME = {"image/png", "image/jpeg", "image/bmp", "image/webp"}
 MAX_FILE_SIZE_MB = 15
+MAX_BATCH_SIZE_MB = 50
 
 
 @router.post("/inspect", response_model=InspectionResult)
@@ -24,6 +25,12 @@ async def inspect_single_board(
     iou_threshold: float = Query(0.40, ge=0.1, le=0.95, description="IoU threshold for NMS"),
 ):
     """Inspects a single uploaded PCB image and returns detected defects and pass/fail status."""
+    if file.content_type not in ALLOWED_MIME:
+        raise HTTPException(
+            status_code=415,
+            detail=f"Unsupported media type '{file.content_type}'. Allowed types: {', '.join(sorted(ALLOWED_MIME))}",
+        )
+
     data = await file.read()
     if len(data) > MAX_FILE_SIZE_MB * 1024 * 1024:
         raise HTTPException(status_code=413, detail=f"File exceeds maximum size of {MAX_FILE_SIZE_MB} MB")
@@ -42,7 +49,16 @@ async def inspect_and_render_image(
     conf_threshold: float = Query(0.50, ge=0.1, le=0.99),
 ):
     """Inspects an image and returns the annotated PNG image with color-coded bounding boxes."""
+    if file.content_type not in ALLOWED_MIME:
+        raise HTTPException(
+            status_code=415,
+            detail=f"Unsupported media type '{file.content_type}'. Allowed types: {', '.join(sorted(ALLOWED_MIME))}",
+        )
+
     data = await file.read()
+    if len(data) > MAX_FILE_SIZE_MB * 1024 * 1024:
+        raise HTTPException(status_code=413, detail=f"File exceeds maximum size of {MAX_FILE_SIZE_MB} MB")
+
     try:
         inspector = PCBInspector(conf_threshold=conf_threshold)
         with Image.open(io.BytesIO(data)) as img:
@@ -68,8 +84,30 @@ async def inspect_batch_boards(
         raise HTTPException(status_code=400, detail="Maximum 50 files allowed per batch")
 
     items = []
+    total_bytes = 0
+
     for f in files:
+        if f.content_type not in ALLOWED_MIME:
+            raise HTTPException(
+                status_code=415,
+                detail=f"File '{f.filename}' has unsupported media type '{f.content_type}'. Allowed types: {', '.join(sorted(ALLOWED_MIME))}",
+            )
+
         data = await f.read()
+        file_size = len(data)
+        if file_size > MAX_FILE_SIZE_MB * 1024 * 1024:
+            raise HTTPException(
+                status_code=413,
+                detail=f"File '{f.filename}' exceeds individual maximum size of {MAX_FILE_SIZE_MB} MB",
+            )
+
+        total_bytes += file_size
+        if total_bytes > MAX_BATCH_SIZE_MB * 1024 * 1024:
+            raise HTTPException(
+                status_code=413,
+                detail=f"Batch payload exceeds cumulative limit of {MAX_BATCH_SIZE_MB} MB",
+            )
+
         try:
             img = Image.open(io.BytesIO(data)).convert("RGB")
             items.append((f.filename or "board.png", img))
