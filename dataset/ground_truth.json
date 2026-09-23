@@ -1,0 +1,668 @@
+{
+  "samples": [
+    {
+      "filename": "pcb_sample_001.png",
+      "is_defective": false,
+      "defects": []
+    },
+    {
+      "filename": "pcb_sample_002.png",
+      "is_defective": false,
+      "defects": []
+    },
+    {
+      "filename": "pcb_sample_003.png",
+      "is_defective": false,
+      "defects": []
+    },
+    {
+      "filename": "pcb_sample_004.png",
+      "is_defective": false,
+      "defects": []
+    },
+    {
+      "filename": "pcb_sample_005.png",
+      "is_defective": true,
+      "defects": [
+        {
+          "class_id": 0,
+          "class_name": "missing_hole",
+          "bbox": {
+            "x_min": 217,
+            "y_min": 666,
+            "x_max": 245,
+            "y_max": 694,
+            "width": 28,
+            "height": 28,
+            "x_center_norm": 0.28875,
+            "y_center_norm": 0.85,
+            "width_norm": 0.035,
+            "height_norm": 0.035
+          }
+        },
+        {
+          "class_id": 0,
+          "class_name": "missing_hole",
+          "bbox": {
+            "x_min": 297,
+            "y_min": 134,
+            "x_max": 325,
+            "y_max": 162,
+            "width": 28,
+            "height": 28,
+            "x_center_norm": 0.38875,
+            "y_center_norm": 0.185,
+            "width_norm": 0.035,
+            "height_norm": 0.035
+          }
+        },
+        {
+          "class_id": 0,
+          "class_name": "missing_hole",
+          "bbox": {
+            "x_min": 72,
+            "y_min": 137,
+            "x_max": 108,
+            "y_max": 173,
+            "width": 36,
+            "height": 36,
+            "x_center_norm": 0.1125,
+            "y_center_norm": 0.19375,
+            "width_norm": 0.045,
+            "height_norm": 0.045
+          }
+        }
+      ]
+    },
+    {
+      "filename": "pcb_sample_006.png",
+      "is_defective": true,
+      "defects": [
+        {
+          "class_id": 1,
+          "class_name": "mouse_bite",
+          "bbox": {
+            "x_min": 626,
+            "y_min": 469,
+            "x_max": 642,
+            "y_max": 485,
+            "width": 16,
+            "height": 16,
+            "x_center_norm": 0.7925,
+            "y_center_norm": 0.59625,
+            "width_norm": 0.02,
+            "height_norm": 0.02
+          }
+        },
+        {
+          "class_id": 1,
+          "class_name": "mouse_bite",
+          "bbox": {
+            "x_min": 652,
+            "y_min": 466,
+            "x_max": 674,
+            "y_max": 488,
+            "width": 22,
+            "height": 22,
+            "x_center_norm": 0.82875,
+            "y_center_norm": 0.59625,
+            "width_norm": 0.0275,
+            "height_norm": 0.0275
+          }
+        }
+      ]
+    },
+    {
+      "filename": "pcb_sample_007.png",
+      "is_defective": true,
+      "defects": [
+        {
+          "class_id": 2,
+          "class_name": "open_circuit",
+          "bbox": {
+            "x_min": 492,
+            "y_min": 352,
+            "x_max": 512,
+            "y_max": 376,
+            "width": 20,
+            "height": 24,
+            "x_center_norm": 0.6275,
+            "y_center_norm": 0.455,
+            "width_norm": 0.025,
+            "height_norm": 0.03
+          }
+        },
+        {
+          "class_id": 2,
+          "class_name": "open_circuit",
+          "bbox": {
+            "x_min": 282,
+            "y_min": 526,
+            "x_max": 298,
+            "y_max": 550,
+            "width": 16,
+            "height": 24,
+            "x_center_norm": 0.3625,
+            "y_center_norm": 0.6725,
+            "width_norm": 0.02,
+            "height_norm": 0.03
+          }
+        },
+        {
+          "class_id": 2,
+          "class_name": "open_circuit",
+          "bbox": {
+            "x_min": 451,
+            "y_min": 237,
+            "x_max": 467,
+            "y_max": 253,
+            "width": 16,
+            "height": 16,
+            "x_center_norm": 0.57375,
+            "y_center_norm": 0.30625,
+            "width_norm": 0.02,
+            "height_norm": 0.02
+          }
+        }
+      ]
+    },
+    {
+      "filename": "pcb_sample_008.png",
+      "is_defective": true,
+      "defects": [
+        {
+          "class_id": 3,
+          "class_name": "short",
+          "bbox": {
+            "x_min": 422,
+            "y_min": 299,
+            "x_max": 442,
+            "y_max": 365,
+            "width": 20,
+            "height": 66,
+            "x_center_norm": 0.54,
+            "y_center_norm": 0.415,
+            "width_norm": 0.025,
+            "height_norm": 0.0825
+          }
+        },
+        {
+          "class_id": 3,
+          "class_name": "short",
+          "bbox": {
+            "x_min": 542,
+            "y_min": 656,
+            "x_max": 558,
+            "y_max": 726,
+            "width": 16,
+            "height": 70,
+            "x_center_norm": 0.6875,
+            "y_center_norm": 0.86375,
+            "width_norm": 0.02,
+            "height_norm": 0.0875
+          }
+        }
+      ]
+    },
+    {
+      "filename": "pcb_sample_009.png",
+      "is_defective": true,
+      "defects": [
+        {
+          "class_id": 4,
+          "class_name": "spur",
+          "bbox": {
+            "x_min": 705,
+            "y_min": 178,
+            "x_max": 721,
+            "y_max": 204,
+            "width": 16,
+            "height": 26,
+            "x_center_norm": 0.89125,
+            "y_center_norm": 0.23875,
+            "width_norm": 0.02,
+            "height_norm": 0.0325
+          }
+        },
+        {
+          "class_id": 4,
+          "class_name": "spur",
+          "bbox": {
+            "x_min": 670,
+            "y_min": 295,
+            "x_max": 689,
+            "y_max": 311,
+            "width": 19,
+            "height": 16,
+            "x_center_norm": 0.849375,
+            "y_center_norm": 0.37875,
+            "width_norm": 0.02375,
+            "height_norm": 0.02
+          }
+        },
+        {
+          "class_id": 4,
+          "class_name": "spur",
+          "bbox": {
+            "x_min": 526,
+            "y_min": 240,
+            "x_max": 542,
+            "y_max": 264,
+            "width": 16,
+            "height": 24,
+            "x_center_norm": 0.6675,
+            "y_center_norm": 0.315,
+            "width_norm": 0.02,
+            "height_norm": 0.03
+          }
+        }
+      ]
+    },
+    {
+      "filename": "pcb_sample_010.png",
+      "is_defective": true,
+      "defects": [
+        {
+          "class_id": 5,
+          "class_name": "spurious_copper",
+          "bbox": {
+            "x_min": 445,
+            "y_min": 429,
+            "x_max": 464,
+            "y_max": 449,
+            "width": 19,
+            "height": 20,
+            "x_center_norm": 0.568125,
+            "y_center_norm": 0.54875,
+            "width_norm": 0.02375,
+            "height_norm": 0.025
+          }
+        },
+        {
+          "class_id": 5,
+          "class_name": "spurious_copper",
+          "bbox": {
+            "x_min": 689,
+            "y_min": 716,
+            "x_max": 707,
+            "y_max": 740,
+            "width": 18,
+            "height": 24,
+            "x_center_norm": 0.8725,
+            "y_center_norm": 0.91,
+            "width_norm": 0.0225,
+            "height_norm": 0.03
+          }
+        }
+      ]
+    },
+    {
+      "filename": "pcb_sample_011.png",
+      "is_defective": true,
+      "defects": [
+        {
+          "class_id": 0,
+          "class_name": "missing_hole",
+          "bbox": {
+            "x_min": 322,
+            "y_min": 701,
+            "x_max": 350,
+            "y_max": 729,
+            "width": 28,
+            "height": 28,
+            "x_center_norm": 0.42,
+            "y_center_norm": 0.89375,
+            "width_norm": 0.035,
+            "height_norm": 0.035
+          }
+        },
+        {
+          "class_id": 0,
+          "class_name": "missing_hole",
+          "bbox": {
+            "x_min": 99,
+            "y_min": 276,
+            "x_max": 135,
+            "y_max": 312,
+            "width": 36,
+            "height": 36,
+            "x_center_norm": 0.14625,
+            "y_center_norm": 0.3675,
+            "width_norm": 0.045,
+            "height_norm": 0.045
+          }
+        },
+        {
+          "class_id": 0,
+          "class_name": "missing_hole",
+          "bbox": {
+            "x_min": 111,
+            "y_min": 260,
+            "x_max": 143,
+            "y_max": 292,
+            "width": 32,
+            "height": 32,
+            "x_center_norm": 0.15875,
+            "y_center_norm": 0.345,
+            "width_norm": 0.04,
+            "height_norm": 0.04
+          }
+        }
+      ]
+    },
+    {
+      "filename": "pcb_sample_012.png",
+      "is_defective": true,
+      "defects": [
+        {
+          "class_id": 1,
+          "class_name": "mouse_bite",
+          "bbox": {
+            "x_min": 454,
+            "y_min": 406,
+            "x_max": 476,
+            "y_max": 428,
+            "width": 22,
+            "height": 22,
+            "x_center_norm": 0.58125,
+            "y_center_norm": 0.52125,
+            "width_norm": 0.0275,
+            "height_norm": 0.0275
+          }
+        },
+        {
+          "class_id": 1,
+          "class_name": "mouse_bite",
+          "bbox": {
+            "x_min": 192,
+            "y_min": 282,
+            "x_max": 212,
+            "y_max": 302,
+            "width": 20,
+            "height": 20,
+            "x_center_norm": 0.2525,
+            "y_center_norm": 0.365,
+            "width_norm": 0.025,
+            "height_norm": 0.025
+          }
+        }
+      ]
+    },
+    {
+      "filename": "pcb_sample_013.png",
+      "is_defective": true,
+      "defects": [
+        {
+          "class_id": 2,
+          "class_name": "open_circuit",
+          "bbox": {
+            "x_min": 718,
+            "y_min": 498,
+            "x_max": 738,
+            "y_max": 518,
+            "width": 20,
+            "height": 20,
+            "x_center_norm": 0.91,
+            "y_center_norm": 0.635,
+            "width_norm": 0.025,
+            "height_norm": 0.025
+          }
+        },
+        {
+          "class_id": 2,
+          "class_name": "open_circuit",
+          "bbox": {
+            "x_min": 203,
+            "y_min": 712,
+            "x_max": 219,
+            "y_max": 736,
+            "width": 16,
+            "height": 24,
+            "x_center_norm": 0.26375,
+            "y_center_norm": 0.905,
+            "width_norm": 0.02,
+            "height_norm": 0.03
+          }
+        },
+        {
+          "class_id": 2,
+          "class_name": "open_circuit",
+          "bbox": {
+            "x_min": 107,
+            "y_min": 169,
+            "x_max": 129,
+            "y_max": 185,
+            "width": 22,
+            "height": 16,
+            "x_center_norm": 0.1475,
+            "y_center_norm": 0.22125,
+            "width_norm": 0.0275,
+            "height_norm": 0.02
+          }
+        }
+      ]
+    },
+    {
+      "filename": "pcb_sample_014.png",
+      "is_defective": true,
+      "defects": [
+        {
+          "class_id": 3,
+          "class_name": "short",
+          "bbox": {
+            "x_min": 232,
+            "y_min": 116,
+            "x_max": 254,
+            "y_max": 185,
+            "width": 22,
+            "height": 69,
+            "x_center_norm": 0.30375,
+            "y_center_norm": 0.188125,
+            "width_norm": 0.0275,
+            "height_norm": 0.08625
+          }
+        },
+        {
+          "class_id": 3,
+          "class_name": "short",
+          "bbox": {
+            "x_min": 459,
+            "y_min": 361,
+            "x_max": 481,
+            "y_max": 424,
+            "width": 22,
+            "height": 63,
+            "x_center_norm": 0.5875,
+            "y_center_norm": 0.490625,
+            "width_norm": 0.0275,
+            "height_norm": 0.07875
+          }
+        }
+      ]
+    },
+    {
+      "filename": "pcb_sample_015.png",
+      "is_defective": true,
+      "defects": [
+        {
+          "class_id": 4,
+          "class_name": "spur",
+          "bbox": {
+            "x_min": 365,
+            "y_min": 179,
+            "x_max": 383,
+            "y_max": 195,
+            "width": 18,
+            "height": 16,
+            "x_center_norm": 0.4675,
+            "y_center_norm": 0.23375,
+            "width_norm": 0.0225,
+            "height_norm": 0.02
+          }
+        },
+        {
+          "class_id": 4,
+          "class_name": "spur",
+          "bbox": {
+            "x_min": 532,
+            "y_min": 362,
+            "x_max": 555,
+            "y_max": 378,
+            "width": 23,
+            "height": 16,
+            "x_center_norm": 0.679375,
+            "y_center_norm": 0.4625,
+            "width_norm": 0.02875,
+            "height_norm": 0.02
+          }
+        },
+        {
+          "class_id": 4,
+          "class_name": "spur",
+          "bbox": {
+            "x_min": 726,
+            "y_min": 244,
+            "x_max": 748,
+            "y_max": 260,
+            "width": 22,
+            "height": 16,
+            "x_center_norm": 0.92125,
+            "y_center_norm": 0.315,
+            "width_norm": 0.0275,
+            "height_norm": 0.02
+          }
+        }
+      ]
+    },
+    {
+      "filename": "pcb_sample_016.png",
+      "is_defective": true,
+      "defects": [
+        {
+          "class_id": 5,
+          "class_name": "spurious_copper",
+          "bbox": {
+            "x_min": 720,
+            "y_min": 585,
+            "x_max": 739,
+            "y_max": 603,
+            "width": 19,
+            "height": 18,
+            "x_center_norm": 0.911875,
+            "y_center_norm": 0.7425,
+            "width_norm": 0.02375,
+            "height_norm": 0.0225
+          }
+        },
+        {
+          "class_id": 5,
+          "class_name": "spurious_copper",
+          "bbox": {
+            "x_min": 618,
+            "y_min": 609,
+            "x_max": 634,
+            "y_max": 630,
+            "width": 16,
+            "height": 21,
+            "x_center_norm": 0.7825,
+            "y_center_norm": 0.774375,
+            "width_norm": 0.02,
+            "height_norm": 0.02625
+          }
+        }
+      ]
+    },
+    {
+      "filename": "pcb_sample_017.png",
+      "is_defective": true,
+      "defects": [
+        {
+          "class_id": 0,
+          "class_name": "missing_hole",
+          "bbox": {
+            "x_min": 160,
+            "y_min": 109,
+            "x_max": 188,
+            "y_max": 137,
+            "width": 28,
+            "height": 28,
+            "x_center_norm": 0.2175,
+            "y_center_norm": 0.15375,
+            "width_norm": 0.035,
+            "height_norm": 0.035
+          }
+        },
+        {
+          "class_id": 0,
+          "class_name": "missing_hole",
+          "bbox": {
+            "x_min": 626,
+            "y_min": 126,
+            "x_max": 654,
+            "y_max": 154,
+            "width": 28,
+            "height": 28,
+            "x_center_norm": 0.8,
+            "y_center_norm": 0.175,
+            "width_norm": 0.035,
+            "height_norm": 0.035
+          }
+        },
+        {
+          "class_id": 0,
+          "class_name": "missing_hole",
+          "bbox": {
+            "x_min": 112,
+            "y_min": 587,
+            "x_max": 148,
+            "y_max": 623,
+            "width": 36,
+            "height": 36,
+            "x_center_norm": 0.1625,
+            "y_center_norm": 0.75625,
+            "width_norm": 0.045,
+            "height_norm": 0.045
+          }
+        }
+      ]
+    },
+    {
+      "filename": "pcb_sample_018.png",
+      "is_defective": true,
+      "defects": [
+        {
+          "class_id": 1,
+          "class_name": "mouse_bite",
+          "bbox": {
+            "x_min": 611,
+            "y_min": 286,
+            "x_max": 633,
+            "y_max": 308,
+            "width": 22,
+            "height": 22,
+            "x_center_norm": 0.7775,
+            "y_center_norm": 0.37125,
+            "width_norm": 0.0275,
+            "height_norm": 0.0275
+          }
+        },
+        {
+          "class_id": 1,
+          "class_name": "mouse_bite",
+          "bbox": {
+            "x_min": 370,
+            "y_min": 410,
+            "x_max": 388,
+            "y_max": 428,
+            "width": 18,
+            "height": 18,
+            "x_center_norm": 0.47375,
+            "y_center_norm": 0.52375,
+            "width_norm": 0.0225,
+            "height_norm": 0.0225
+          }
+        }
+      ]
+    }
+  ]
+}
