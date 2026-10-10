@@ -1,3 +1,5 @@
+# English
+
 # 🔬 Synthetic PCB AOI Prototype & Benchmark Platform: Rule-Based Computer Vision & Quality Control Engine
 
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
@@ -206,3 +208,50 @@ curl -X POST http://localhost:8000/api/v1/inspect/batch \
 ## 📄 License
 
 Distributed under the MIT License. See `LICENSE` for details.
+
+---
+
+## Türkçe
+
+# 🔬 Sentetik PCB AOI Prototipi & Referans Platformu: Kural Tabanlı Bilgisayar Görüşü & Kalite Kontrol Motoru
+
+[![Python 3.11+](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.111+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.35+-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
+[![Taksonomi: IPC--A--610 Kategorileri](https://img.shields.io/badge/Taksonomi-Simüle%20IPC--A--610-blue?style=for-the-badge)](https://www.ipc.org)
+[![Pytest](https://img.shields.io/badge/Pytest-30%2F30%20Başarılı-10b981?style=for-the-badge&logo=pytest&logoColor=white)](tests/)
+[![Ruff](https://img.shields.io/badge/Kod%20Stili-Ruff%200%20Hata-purple.svg?style=for-the-badge)](https://github.com/astral-sh/ruff)
+[![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-blue.svg?style=for-the-badge)](LICENSE)
+
+Basitleştirilmiş otomatik optik muayene (AOI) prototibi ve baskılı devre kartı (PCB) kalite kontrolü için değerlendirme test yuvası. Klasik morfolojik ve geometrik bilgisayar görüşü (NumPy, SciPy, Pillow), prosedürel FR4 kart sentezi ile exact ground-truth anotasyonları, üretime hazır hardened FastAPI mikroservisi ve etkileşimli Streamlit operatör terminali ile oluşturulur. 6 simüle edilmiş **IPC-A-610** yüzey defect kategorisi için şeffaf temel metrikler sağlanır.
+
+---
+
+## 🏗️ Mimari & Muayene İşlem Hattı
+
+```mermaid
+flowchart TD
+    subgraph Acquisition["1. Görüntü Edinimi & Ön İşleme"]
+        A1[Yüksek Çözünürlüklü Optik Kamera / PCB Yükleme] --> A2[Renk Normalizasyonu & Maskeleme]
+        A2 --> A3[FR4 Lööt Maskesi Substrat Segmentasyonu]
+        A2 --> A4[ENIG Altın / Bakır İz Kanalı]
+        A2 --> A5[Via & Montaj Delik Çekirdek Kanalı]
+    end
+
+    subgraph InspectionCore["2. Çoklu Ölçekli Defect Tespit Çekirdeği"]
+        A4 & A5 --> B1["Mesafe Dönüşümü (Via Anular Çekirdek vs Eksik Delik)"]
+        A4 --> B2["1D Tarama Satırı Uzunluk Sürekliliği (Açık Devre)"]
+        A4 & A5 --> B3["Morfolojik Açma & Hit-or-Miss (Kısa Devre & Köprüler)"]
+        A3 & A4 --> B4["Bağlantılı Bileşenler Mekansal İzolasyonu (Fazla Bakır)"]
+        B1 & B2 & B3 & B4 --> B5[Ham Aday Sınırlayıcı Kutular & Güven Skorları]
+    end
+
+    subgraph PostProcessing["3. Mekansal Bastırma & Kalite Mantığı"]
+        B5 --> C1[Non-Maximum Suppression NMS ile Dinamik IoU]
+        C1 --> C2{IPC-A-610 Sınıf 3 Şiddet Motoru}
+        C2 -->|Kritik / Yüksek Defect Bulundu| C3["KALİTE KARARI: RED / BAŞARISIZ"]
+        C2 -->|Defect Yok veya Kabul Edilebilir Küçük| C4["KALİTE KARARI: KABUL / BAŞARILI"]
+    end
+
+    subgraph Delivery["4. Üretim Arka Uç & QC Terminali"]
+        C3 & C4 --> D1
